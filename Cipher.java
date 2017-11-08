@@ -80,7 +80,7 @@ public class Cipher {
    
     public void decode(String file) throws IOException{ // function for decoding
        
-        byte[] keys = getKey();      // fetch the key (thx capt. Obvious)
+        byte[] keys = getKey();      // fetch the key
         Path path = Paths.get(file);    // fetch the file
         
         Charset charset = Charset.forName("ISO-8859-1");      // initialize charset
@@ -108,7 +108,7 @@ public class Cipher {
 				b[k] = (byte) (b[k] - keys[l]);
 			}
 		}
-        String decodedExt = new String(b, "UTF-8"); // UTF 8 because it's work and not ISO
+        String decodedExt = new String(b, "UTF-8"); // UTF 8 because it work and not ISO
         
         String fileName = path.getFileName().toString(); // converting the filename to a string
 		File originalFileName = new File(file); // storing the original name
